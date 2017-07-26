@@ -1,0 +1,15 @@
+<template>
+  <require from="../comments/comments"></require>
+  <require from="../comment-form/comment-form"></require>
+
+  <div class="post-page">
+    <div class="page-header">
+      <h1>${post.title}</h1>
+    </div>
+
+    <div class="content">${post.content}</div>
+
+    <post-comments post.bind="post"></post-comments>
+    <comment-form post.bind="post"></comment-form>
+  </div>
+</template>

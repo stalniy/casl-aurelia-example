@@ -1,0 +1,23 @@
+<template>
+  <require from ="./root.css"></require>
+
+  <div class="flex-row">
+    <nav class="menu">
+      <h3>Menu</h3>
+      <ul>
+        <li repeat.for="row of router.navigation">
+          <a class.bind="row.isActive ? 'active' : ''" href.bind="row.href">${row.title}</a>
+        </li>
+        <li if.bind="!isLoggedIn">
+          <a route-href="route: login">Login</a>
+        </li>
+        <li if.bind="isLoggedIn">
+          <a href="#" click.trigger="logout()">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <router-view class="page"></router-view>
+  </div>
+  <ul ref="messagesPlaceholder" class="prophet"></ul>
+</template>

@@ -1,0 +1,25 @@
+<template>
+  <form class="post-form" submit.trigger="save()">
+    <h1>${post.isNew() ? 'Create' : 'Edit'} post</h1>
+
+    <div class="form-group" validation-errors.bind="titleErrors" class.bind="titleErrors.length ? 'has-error' : ''">
+      <label>Title</label>
+      <input type="text" class="form-control" value.bind="post.title & validate">
+      <span class="help-block" repeat.for="info of titleErrors">
+        ${info.error.message}
+      </span>
+    </div>
+
+    <div class="form-group" validation-errors.bind="contentErrors" class.bind="contentErrors.length ? 'has-error' : ''">
+      <label>Content</label>
+      <textarea class="form-control" value.bind="post.content & validate"></textarea>
+      <span class="help-block" repeat.for="info of contentErrors">
+        ${info.error.message}
+      </span>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</template>

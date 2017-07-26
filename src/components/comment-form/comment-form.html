@@ -1,0 +1,25 @@
+<template>
+  <h3>Leave your comment</h3>
+
+  <form class="comment-form" submit.trigger="save()">
+    <div class="form-group" validation-errors.bind="authorErrors" class.bind="authorErrors.length ? 'has-error' : ''">
+      <label>Author</label>
+      <input type="text" class="form-control" value.bind="comment.author & validate">
+      <span class="help-block" repeat.for="info of authorErrors">
+        ${info.error.message}
+      </span>
+    </div>
+
+    <div class="form-group" validation-errors.bind="contentErrors" class.bind="contentErrors.length ? 'has-error' : ''">
+      <label>Content</label>
+      <textarea class="form-control" value.bind="comment.text & validate"></textarea>
+      <span class="help-block" repeat.for="info of contentErrors">
+        ${info.error.message}
+      </span>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Comment</button>
+    </div>
+  </form>
+</template>

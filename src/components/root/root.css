@@ -1,0 +1,129 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.flex-row {
+  display: flex;
+  height: 100vh;
+}
+
+.menu {
+  flex: 1;
+  color: #565a69;
+  background-color: #2b2f3e;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.menu h3 {
+  font-weight: 400;
+  margin: 0;
+  font-size: 2rem;
+  padding: 20px 20px 50px 50px;
+
+}
+
+.menu a {
+  padding: 13px 0 13px 50px;
+  display: block;
+  color: #565a69;
+  font-size: 1.4rem;
+}
+
+.menu a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu .active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #ff3c4f;
+}
+
+.page {
+  flex: 2;
+  padding: 30px 2%;
+  overflow: auto;
+}
+
+textarea.form-control {
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+}
+
+.prophet {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  margin-left: 70%;
+  transition: margin 0.1s cubic-bezier(.07,.99,.93,.97);
+}
+
+.prophet > li{
+  margin-top:0px;
+  margin-bottom:0px;
+  list-style-type: none;
+  min-width: 100px;
+  opacity:0;
+  background-color: #323232;
+  color: #fafafa;
+  z-index: 99;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 20px;
+  vertical-align: middle;
+  max-width: 400px;
+  text-align: center;
+  box-shadow:     1px 1px 1px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s cubic-bezier(.07,.99,.93,.97);
+}
+.prophet > .prophet-message-active{
+
+  margin-top:10px;
+  margin-bottom:0px;
+  opacity: 1;
+  transition: all 0.1s cubic-bezier(.07,.99,.93,.97);
+}
+
+@media only screen and (min-width: 240px){
+  ul.prophet{
+    margin-left:10px;
+  }
+}
+@media only screen and (min-width: 240px) and (max-width: 320px){
+  ul.prophet{
+    margin-left:30%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px){
+  ul.prophet{
+    margin-left:35%;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 600px){
+  ul.prophet{
+    margin-left:50%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 720px){
+  ul.prophet{
+    margin-left:60%;
+  }
+}
+@media only screen and (min-width: 720px) and (max-width: 1024px){
+  ul.prophet{
+    margin-left:70%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  ul.prophet{
+    margin-left:75%;
+  }
+}

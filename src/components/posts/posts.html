@@ -1,0 +1,22 @@
+<template>
+  <require from="./posts.css"></require>
+
+  <div class="list-item" repeat.for="post of posts">
+    <div class="main">
+      <a route-href="route: viewPost; params.bind: { id: post._id }">${post.title}</a>
+      <!-- <span class="count">${post.comments.length}</span> -->
+    </div>
+    <div class="actions">
+      <a class="btn btn-default" route-href="route: editPost; params.bind: { id: post._id }">
+        Edit
+      </a>
+      <button class="btn btn-delete" click.trigger="remove(post)">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <div if.bind="!posts.length">
+    There are no posts
+  </div>
+</template>
