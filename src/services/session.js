@@ -13,7 +13,7 @@ export class Session {
 
   create(credentials) {
     return this.ds.findAll('User', { email: credentials.email })
-      .then(users => users.length ? users[0] : this.ds.create('Post', { email: credentials.email }))
+      .then(users => users.length ? users[0] : this.ds.create('User', { email: credentials.email }))
       .then(user => {
         return this.mapper.create(Object.assign({ user, token: Date.now() }, credentials))
       })

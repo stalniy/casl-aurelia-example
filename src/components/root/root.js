@@ -15,19 +15,18 @@ export class Root {
   }
 
   configureRouter(config, router){
-    config.title = 'Blog Application';
-
+    this.router = router
+    config.title = 'Blog Application'
+    config.options.pushState = true
     config.map([
       { route: '', name: 'home', moduleId: '../posts/posts', nav: true, title: 'Home' },
-      { route: 'new', name: 'newPost', moduleId: '../post-form/post-form', nav: true, title: 'Add Post' },
+      { route: 'new', name: 'newPost', moduleId: '../post-form/post-form', title: 'Add Post' },
       { route: 'posts/:id/edit', name: 'editPost', moduleId: '../post-form/post-form' },
       { route: 'posts/:id', name: 'viewPost', moduleId: '../post-page/post-page' },
       { route: 'login', name: 'login', moduleId: '../login-form/login-form', title: 'Login' }
     ]);
 
     config.mapUnknownRoutes('home')
-
-    this.router = router;
   }
 
   logout() {
