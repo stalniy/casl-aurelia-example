@@ -1,10 +1,12 @@
 import { DataStore } from './ds'
 
+const TOKEN_NAME = 'token_id'
+
 export class Session {
   static inject = [DataStore]
 
   constructor(ds) {
-    this.token = ''
+    this.token = localStorage[TOKEN_NAME]
     this.ds = ds
     this.mapper = ds.getMapper('Session')
   }
@@ -21,6 +23,7 @@ export class Session {
   update(attrs) {
     this.token = attrs.token
     this.user = attrs.user
+    localStorage[TOKEN_NAME] = this.token
 
     return this
   }
