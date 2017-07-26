@@ -19,7 +19,6 @@ export function configureStore({ container }) {
 
     ds.on('afterCreate', (name, session) => {
       if (name === 'Session') {
-        console.log('here?', session)
         ds.getMapper('Post').recordClass.prototype.authorId = session.user._id
       }
     })
