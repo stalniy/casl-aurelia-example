@@ -6,7 +6,7 @@ export class DateValueConverter {
   toView(value, format) {
     const date = moment(value)
 
-    if (Date.now() - date.getTime() < ONE_DAY) {
+    if (Date.now() - date < ONE_DAY) {
       return date.fromNow()
     }
 
