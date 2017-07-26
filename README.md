@@ -32,3 +32,20 @@ Now you open http://localhost:9000 where you will see application.
 
 * `js-data` mappers configuration can be found at `src/config/store`
 * `Session` is fetched for each page reload at `src/config/session`
+
+To see application without authorization integration, checkout to `without-casl` branch.
+
+## Abilities
+
+All abilities are define in `src/config/abilities` and updated each time when new `Session` is created, found or destroyed (i.e., when user log in or log out).
+Application uses `can` binding behavior with `if` binding:
+
+```js
+<li if.bind="'Post' & can: 'create'">
+  <a route-href="route: newPost">Add Post</a>
+</li>
+```
+
+In this case if user has ability to `create` posts he will see the button, otherwise button will be removed.
+It's better to use binding behavior because thanks to it UI can be updated without page reloading.
+For more information about binding behaviors please refer to [Aurealia documentation](http://aurelia.io/hub.html#/doc/article/aurelia/binding/latest/binding-binding-behaviors)

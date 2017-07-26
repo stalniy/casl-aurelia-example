@@ -6,7 +6,12 @@
       <h3>Menu</h3>
       <ul>
         <li repeat.for="row of router.navigation">
-          <a class.bind="row.isActive ? 'active' : ''" href.bind="row.href">${row.title}</a>
+          <a class.bind="row.isActive ? 'active' : ''" href.bind="row.href">
+            ${row.title}
+          </a>
+        </li>
+        <li if.bind="'Post' & can: 'create'">
+          <a route-href="route: newPost">Add Post</a>
         </li>
         <li if.bind="!isLoggedIn">
           <a route-href="route: login">Login</a>

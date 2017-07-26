@@ -10,6 +10,6 @@
     <div class="content">${post.content}</div>
 
     <post-comments post.bind="post"></post-comments>
-    <comment-form post.bind="post"></comment-form>
+    <comment-form post.bind="post" if.bind="'Comment' & can: 'create'"></comment-form>
   </div>
 </template>

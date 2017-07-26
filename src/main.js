@@ -3,6 +3,7 @@ import environment from './environment';
 export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
+    .globalResources('./pipes/can')
     .plugin('aurelia-validation')
     .feature('config');
 
