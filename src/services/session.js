@@ -33,12 +33,12 @@ export class Session {
       return Promise.reject(new Error('No token'))
     }
 
-    return this.mapper.find()
+    return this.mapper.find(this.token)
       .then(session => this.update(session))
   }
 
   destroy() {
-    return this.mapper.destroy()
+    return this.mapper.destroy(this.token)
       .then(() => this.update({}))
   }
 }

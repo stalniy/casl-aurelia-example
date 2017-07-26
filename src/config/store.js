@@ -15,7 +15,9 @@ export function configureStore({ container }) {
       }
     })
     ds.defineMapper('User')
-    ds.defineMapper('Session')
+    ds.defineMapper('Session', {
+      idAttribute: 'token'
+    })
 
     ds.on('afterCreate', (name, session) => {
       if (name === 'Session') {
