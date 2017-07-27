@@ -12,7 +12,7 @@ Application uses standard [aurelia cli](http://aurelia.io/hub.html#/doc/article/
 
 ## Installation
 
-First of all, you will [Aurelia CLI](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/the-aurelia-cli)
+First of all, you need to install [Aurelia CLI](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/the-aurelia-cli)
 
 ```sh
 npm install -g aurelia-cli
@@ -25,7 +25,7 @@ npm install
 au run --watch
 ```
 
-Now you open http://localhost:9000 where you will see application.
+Now you can open http://localhost:9000 to see application.
 
 
 ## Configuration
@@ -33,11 +33,11 @@ Now you open http://localhost:9000 where you will see application.
 * `js-data` mappers configuration can be found at `src/config/store`
 * `Session` is fetched for each page reload at `src/config/session`
 
-To see application without authorization integration, checkout to `without-casl` branch.
+To see application without CASL integration, checkout to `without-casl` branch.
 
 ## Abilities
 
-All abilities are define in `src/config/abilities` and updated each time when new `Session` is created, found or destroyed (i.e., when user log in or log out).
+All abilities are defined in `src/config/abilities` and updated each time a new `Session` is created, found or destroyed (i.e., when user log in or log out).
 Application uses `can` binding behavior with `if` binding:
 
 ```js
@@ -46,6 +46,5 @@ Application uses `can` binding behavior with `if` binding:
 </li>
 ```
 
-In this case if user has ability to `create` posts he will see the button, otherwise button will be removed.
-It's better to use binding behavior because thanks to it UI can be updated without page reloading.
+In this case if user has ability to `create` posts, he will see the button, otherwise button will be removed.
 For more information about binding behaviors please refer to [Aurealia documentation](http://aurelia.io/hub.html#/doc/article/aurelia/binding/latest/binding-binding-behaviors)

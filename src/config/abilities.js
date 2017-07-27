@@ -24,31 +24,36 @@ function subjectName(subject) {
   return subject.constructor.mapper.name
 }
 
-export function configureAbility({ container }) {
-  const ds = container.get(DataStore)
-  const ability = new Ability([], { subjectName })
-  const updateAbilitiesOf = user => {
-    ability.update(defineRulesFor(user))
-    container.get(BindingSignaler).signal('ability-changed')
-  }
-
-  container.registerInstance(Ability, ability)
-
+function listenToSessionChanges(ds, onChange) {
   ds.on('afterCreate', (name, session) => {
     if (name === 'Session') {
-      updateAbilitiesOf(session.user)
+      onChange(session)
     }
   })
 
   ds.on('afterFind', (name, id, mapper, session) => {
     if (name === 'Session') {
-      updateAbilitiesOf(session.user)
+      onChange(session)
     }
   })
 
   ds.on('afterDestroy', (name) => {
     if (name === 'Session') {
-      updateAbilitiesOf(null)
+      onChange(null)
     }
+  })
+}
+
+export function configureAbility({ container }) {
+  const ability = new Ability([], { subjectName })
+
+  container.registerInstance(Ability, ability)
+
+  const ds = container.get(DataStore)
+  const signaler = container.get(BindingSignaler)
+  listenToSessionChanges(ds, session => {
+    const rules = defineRulesFor(session ? session.user : null)
+    ability.update(rules)
+    signaler.signal('ability-changed')
   })
 }

@@ -1,4 +1,3 @@
-import { child } from 'aurelia-framework'
 import { Session } from '../../services/session'
 import { Messenger } from '../../services/messenger'
 
@@ -31,7 +30,10 @@ export class Root {
 
   logout() {
     return this.session.destroy()
-      .then(() => this.messenger.success('You have been successfully logged out'))
+      .then(() => {
+        this.router.navigate('/')
+        this.messenger.success('You have been successfully logged out')
+      })
   }
 
   attached() {

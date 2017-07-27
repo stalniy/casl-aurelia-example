@@ -31,7 +31,7 @@ export function configureStore({ container }) {
     })
 
     ds.on('afterFind', (name, id, mapper, session) => {
-      if (name === 'Session') {
+      if (name === 'Session' && session) {
         ds.getMapper('Post').recordClass.prototype.authorId = session.user._id
       }
     })
