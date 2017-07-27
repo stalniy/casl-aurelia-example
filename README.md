@@ -1,5 +1,7 @@
 # CASL and Aurelia integration
 
+Read [CASL in Aurelia app][casl-aurelia-example] for details
+
 * [CASL](https://stalniy.github.io/casl/) is an isomorphic authorization JavaScript library which restricts what resources a given user is allowed to access
 * [Aurelia](http://aurelia.io) is a JavaScript client framework for mobile, desktop and web leveraging simple conventions and empowering creativity. The main benefit of Aurealia is that resulting code is highly portable and testable, it's easy to read and support.
 * [js-data](http://www.js-data.io/v3.0/) is a framework-agnostic, datastore-agnostic JavaScript ORM built for ease of use and peace of mind. Works in Node.js and in the Browser.
@@ -32,3 +34,5 @@ Now you open http://localhost:9000 where you will see application.
 
 * `js-data` mappers configuration can be found at `src/config/store`
 * `Session` is fetched for each page reload at `src/config/session`
+
+[casl-aurelia-example]: https://medium.com/@sergiy.stotskiy/casl-based-authorization-in-aurelia-app-3e44c0fe1703
