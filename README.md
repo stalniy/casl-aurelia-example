@@ -42,7 +42,7 @@ To see application without CASL integration, checkout to `without-casl` branch.
 All abilities are defined in `src/config/abilities` and updated each time a new `Session` is created, found or destroyed (i.e., when user log in or log out).
 Application uses `can` value convertor with `if` binding:
 
-```js
+```html
 <li if.bind="'Post' | can: 'create'">
   <a route-href="route: newPost">Add Post</a>
 </li>
