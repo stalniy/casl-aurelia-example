@@ -6,10 +6,10 @@
       <a route-href="route: viewPost; params.bind: { id: post._id }">${post.title}</a>
     </div>
     <div class="actions">
-      <a class="btn btn-default" if.bind="post & can: 'update'" route-href="route: editPost; params.bind: { id: post._id }">
+      <a class="btn btn-default" if.bind="post | can: 'update'" route-href="route: editPost; params.bind: { id: post._id }">
         Edit
       </a>
-      <button class="btn btn-delete" if.bind="post & can: 'delete'" click.trigger="remove(post)">
+      <button class="btn btn-delete" if.bind="post | can: 'delete'" click.trigger="remove(post)">
         Delete
       </button>
     </div>

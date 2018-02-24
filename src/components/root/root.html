@@ -10,7 +10,7 @@
             ${row.title}
           </a>
         </li>
-        <li if.bind="'Post' & can: 'create'">
+        <li if.bind="'Post' | can: 'create'">
           <a route-href="route: newPost">Add Post</a>
         </li>
         <li if.bind="!isLoggedIn">

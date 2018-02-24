@@ -1,6 +1,6 @@
 import { AbilityBuilder, Ability } from 'casl'
 import { DataStore } from '../services/ds'
-import { BindingSignaler } from 'aurelia-templating-resources'
+import { signalBindings } from 'aurelia-binding'
 
 function defineRulesFor(user) {
   const { can, rules } = AbilityBuilder.extract()
@@ -48,12 +48,9 @@ export function configureAbility({ container }) {
   const ability = new Ability([], { subjectName })
 
   container.registerInstance(Ability, ability)
-
-  const ds = container.get(DataStore)
-  const signaler = container.get(BindingSignaler)
-  listenToSessionChanges(ds, session => {
+  listenToSessionChanges(container.get(DataStore), session => {
     const rules = defineRulesFor(session ? session.user : null)
     ability.update(rules)
-    signaler.signal('ability-changed')
+    signalBindings('ability-changed')
   })
 }
