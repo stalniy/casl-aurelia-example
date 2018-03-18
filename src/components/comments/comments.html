@@ -1,0 +1,16 @@
+<template>
+  <require from="./comments.css"></require>
+  <require from="../../pipes/date"></require>
+
+  <ul>
+    <li repeat.for="comment of comments">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="pull-right">${comment.createdAt | date }</div>
+          ${comment.author}
+        </div>
+        <div class="panel-body">${comment.text}</div>
+      </div>
+    </li>
+  </ul>
+</template>

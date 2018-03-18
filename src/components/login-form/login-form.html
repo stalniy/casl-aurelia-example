@@ -1,0 +1,27 @@
+<template>
+  <form class="login-form" submit.trigger="save()" novalidate>
+    <div class="text-center">
+      <img src="http://aurelia.io/images/main-logo.svg">
+    </div>
+    <div class="form-group" validation-errors.bind="emailErrors" class.bind="emailErrors.length ? 'has-error' : ''">
+      <label>Email</label>
+      <input type="email" class="form-control" value.bind="credentials.email & validate">
+      <span class="help-block" repeat.for="info of emailErrors">
+        ${info.error.message}
+      </span>
+    </div>
+
+    <div class="form-group" validation-errors.bind="passwordErrors" class.bind="passwordErrors.length ? 'has-error' : ''">
+      <label>Password</label>
+      <input type="password" class="form-control" value.bind="credentials.password & validate">
+      <span class="help-block" repeat.for="info of passwordErrors">
+        ${info.error.message}
+      </span>
+    </div>
+
+    <div class="form-actions">
+      <div class="help-block help-block-info">Use casl@medium.com / password to login</div>
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </div>
+  </form>
+</template>

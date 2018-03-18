@@ -1,0 +1,22 @@
+post-comments {
+  display: block;
+  margin: 20px 0;
+}
+
+post-comments ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+post-comments .panel-default {
+  border: 0;
+}
+
+post-comments .panel {
+  box-shadow: none;
+}
+
+post-comments .panel-heading {
+  border-width: 1px;
+  border-style: solid;
+}
