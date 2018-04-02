@@ -9,8 +9,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@casl/ability": "^2.0.0-alpha.ade5be4a",
-    "@casl/aurelia": "0.1.0-alpha.0a160892",
+    "@casl/ability": "^2.0.1",
+    "@casl/aurelia": "0.1.1",
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.2.0",
     "aurelia-framework": "^1.1.5",
