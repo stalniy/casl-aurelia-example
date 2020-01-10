@@ -24,7 +24,7 @@ npm ci
 npm start
 ```
 
-Now you can open http://localhost:9000 to see application.
+Now you can open http://localhost:8080 to see application.
 
 
 ## Configuration
