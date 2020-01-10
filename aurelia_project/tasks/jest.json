@@ -1,7 +1,7 @@
 {
   "name": "jest",
   "description": "Runs Jest and reports the results.",
-  "parameters": [
+  "flags": [
     {
       "name": "watch",
       "description": "Watches test files for changes and re-runs the tests automatically.",

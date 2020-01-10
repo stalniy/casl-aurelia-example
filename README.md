@@ -17,17 +17,11 @@ Application uses standard [aurelia cli](http://aurelia.io/hub.html#/doc/article/
 
 ## Installation
 
-First of all, you need to install [Aurelia CLI](http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/the-aurelia-cli)
-
-```sh
-npm install -g aurelia-cli
-```
-
-then clone this repository and run:
+Clone this repository and run:
 
 ```sh
 npm ci
-au run --watch
+npm start
 ```
 
 Now you can open http://localhost:9000 to see application.

@@ -1,67 +1,6 @@
 {
   "name": "casl-aurelia-example",
   "type": "project:application",
-  "bundler": {
-    "id": "webpack",
-    "displayName": "Webpack"
-  },
-  "build": {
-    "options": {
-      "server": "dev",
-      "extractCss": "prod",
-      "coverage": false
-    }
-  },
-  "platform": {
-    "id": "web",
-    "displayName": "Web",
-    "port": 8080,
-    "hmr": false,
-    "open": true,
-    "output": "dist"
-  },
-  "loader": {
-    "id": "none",
-    "displayName": "None"
-  },
-  "transpiler": {
-    "id": "babel",
-    "displayName": "Babel",
-    "fileExtension": ".js",
-    "options": {
-      "plugins": [
-        "transform-object-rest-spread"
-      ]
-    }
-  },
-  "markupProcessor": {
-    "id": "minimum",
-    "displayName": "Minimal Minification",
-    "fileExtension": ".html"
-  },
-  "cssProcessor": {
-    "id": "none",
-    "displayName": "None",
-    "fileExtension": ".css"
-  },
-  "editor": {
-    "id": "vscode",
-    "displayName": "Visual Studio Code"
-  },
-  "unitTestRunner": [
-    {
-      "id": "jest",
-      "displayName": "Jest"
-    },
-    {
-      "id": "karma",
-      "displayName": "Karma"
-    }
-  ],
-  "integrationTestRunner": {
-    "id": "none",
-    "displayName": "None"
-  },
   "paths": {
     "root": "src",
     "resources": "components",
@@ -71,8 +10,23 @@
     "valueConverters": "pipes",
     "bindingBehaviors": "binding-behaviors"
   },
-  "testFramework": {
-    "id": "jasmine",
-    "displayName": "Jasmine"
-  }
+  "transpiler": {
+    "id": "babel",
+    "fileExtension": ".js"
+  },
+  "build": {
+    "options": {
+      "server": "dev",
+      "extractCss": "prod",
+      "coverage": false
+    }
+  },
+  "platform": {
+    "hmr": false,
+    "open": false,
+    "port": 8080,
+    "host": "localhost",
+    "output": "dist"
+  },
+  "packageManager": "npm"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "karma",
-  "description": "Runs Karma and reports the results.",
+  "name": "test",
+  "description": "Runs Jest and reports the results.",
   "flags": [
     {
       "name": "watch",

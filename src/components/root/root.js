@@ -2,7 +2,7 @@ import { PLATFORM } from 'aurelia-framework'
 import { Session } from '../../services/session'
 import { Messenger } from '../../services/messenger'
 
-export class Root {
+export class AppRoot {
   static inject = [Session, Messenger]
 
   constructor(session, messenger) {
