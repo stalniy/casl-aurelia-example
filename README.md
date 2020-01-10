@@ -26,7 +26,7 @@ npm install -g aurelia-cli
 then clone this repository and run:
 
 ```sh
-npm install
+npm ci
 au run --watch
 ```
 
