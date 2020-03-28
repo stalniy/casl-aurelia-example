@@ -8,6 +8,7 @@
     "url": "git@github.com:stalniy/casl-aurelia-example.git"
   },
   "license": "MIT",
+  "main": "src/main.js",
   "dependencies": {
     "@casl/ability": "^3.4.0",
     "@casl/aurelia": "^0.5.0",
