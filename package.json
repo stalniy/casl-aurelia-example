@@ -10,7 +10,7 @@
   "license": "MIT",
   "main": "src/main.js",
   "dependencies": {
-    "@casl/ability": "^3.4.0",
+    "@casl/ability": "^6.7.5",
     "@casl/aurelia": "^0.5.0",
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.2.0",
